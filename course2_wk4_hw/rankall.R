@@ -2,7 +2,21 @@
 ## that takes two arguments: an outcome name (outcome) and a hospital ranking (num). 
 ## The function reads the outcome-of-care-measures.csv file and returns a 2-column 
 ## data frame containing the hospital in each state that has the ranking specified 
-## in num. 
+## in num.
+
+## head(rankall("heart attack", "best"), 5)
+##                        Hospital.Name State
+## AK  PROVIDENCE ALASKA MEDICAL CENTER    AK
+## AL          CRESTWOOD MEDICAL CENTER    AL
+## AR           ARKANSAS HEART HOSPITAL    AR
+## AZ              MAYO CLINIC HOSPITAL    AZ
+## CA GLENDALE ADVENTIST MEDICAL CENTER    CA
+
+## head(rankall("heart attack", 20), 3)
+##                        Hospital.Name State
+## AK                              <NA>    AK
+## AL    D W MCMILLAN MEMORIAL HOSPITAL    AL
+## AR ARKANSAS METHODIST MEDICAL CENTER    AR
 
 rankall <- function(outcome, num = "best") {
   
