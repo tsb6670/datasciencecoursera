@@ -369,5 +369,8 @@ rankall <- function(outcome, num = "best") {
 
   ## Return a data frame with the hospital names and the
   ## (abbreviated) state name
+  names(rt)[1]<-paste("hospital")
+  names(rt)[2]<-paste("state")
+  
   rt
 }
