@@ -1,0 +1,24 @@
+CodeBook
+
+Data set is stored in: course3_wk4_data/GettingandCleaningDataCourseProject.csv
+
+Variables are:
+
+"" - first column, empty header - this is the row number
+
+subject_id - this is the subject identifier
+
+activity_id - this is the activity identifier
+
+activity_name - this is the descriptive name for the activity identifier (activity_id)
+
+type - identifies the class of variable labeled as type
+
+mean - the mean corresponding to the collected measurement (one measurement per row)
+
+std - the standard deviation corresponding to the collected measurement (one measurement per row)
+
+avg_mean - the average mean corresponding to the class variable (average of all measurements of type/class)
+
+avg_std - the average standard corresponding to the class variable (average of all measurements of type/class)
+
