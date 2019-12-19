@@ -59,6 +59,8 @@ tbl_body_acc_x_train <- select(tbl_df(df_body_acc_x_train), type, V1:V2)
 names(tbl_body_acc_x_train)[2] <- "mean"
 names(tbl_body_acc_x_train)[3] <- "std"
 tbl_body_acc_x_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_acc_x_train))
+## filter and add averages
+tbl_body_acc_x_train <- mutate(filter(tbl_body_acc_x_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_acc_y_train.txt
 df_body_acc_y_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/body_acc_y_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -67,6 +69,8 @@ tbl_body_acc_y_train <- select(tbl_df(df_body_acc_y_train), type, V1:V2)
 names(tbl_body_acc_y_train)[2] <- "mean"
 names(tbl_body_acc_y_train)[3] <- "std"
 tbl_body_acc_y_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_acc_y_train))
+## filter and add averages
+tbl_body_acc_y_train <- mutate(filter(tbl_body_acc_y_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_acc_z_train.txt
 df_body_acc_z_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/body_acc_z_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -75,6 +79,8 @@ tbl_body_acc_z_train <- select(tbl_df(df_body_acc_z_train), type, V1:V2)
 names(tbl_body_acc_z_train)[2] <- "mean"
 names(tbl_body_acc_z_train)[3] <- "std"
 tbl_body_acc_z_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_acc_z_train))
+## filter and add averages
+tbl_body_acc_z_train <- mutate(filter(tbl_body_acc_z_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_x_train.txt
 df_body_gyro_x_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/body_gyro_x_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -83,6 +89,8 @@ tbl_body_gyro_x_train <- select(tbl_df(df_body_gyro_x_train), type, V1:V2)
 names(tbl_body_gyro_x_train)[2] <- "mean"
 names(tbl_body_gyro_x_train)[3] <- "std"
 tbl_body_gyro_x_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_gyro_x_train))
+## filter and add averages
+tbl_body_gyro_x_train <- mutate(filter(tbl_body_gyro_x_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_y_train.txt
 df_body_gyro_y_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/body_gyro_y_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -91,6 +99,8 @@ tbl_body_gyro_y_train <- select(tbl_df(df_body_gyro_y_train), type, V1:V2)
 names(tbl_body_gyro_y_train)[2] <- "mean"
 names(tbl_body_gyro_y_train)[3] <- "std"
 tbl_body_gyro_y_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_gyro_y_train))
+## filter and add averages
+tbl_body_gyro_y_train <- mutate(filter(tbl_body_gyro_y_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_z_train.txt
 df_body_gyro_z_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/body_gyro_z_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -99,6 +109,8 @@ tbl_body_gyro_z_train <- select(tbl_df(df_body_gyro_z_train), type, V1:V2)
 names(tbl_body_gyro_z_train)[2] <- "mean"
 names(tbl_body_gyro_z_train)[3] <- "std"
 tbl_body_gyro_z_train <- tbl_df(cbind(tbl_SubAct_train, tbl_body_gyro_z_train))
+## filter and add averages
+tbl_body_gyro_z_train <- mutate(filter(tbl_body_gyro_z_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_x_train.txt
 df_total_acc_x_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/total_acc_x_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -107,6 +119,8 @@ tbl_total_acc_x_train <- select(tbl_df(df_total_acc_x_train), type, V1:V2)
 names(tbl_total_acc_x_train)[2] <- "mean"
 names(tbl_total_acc_x_train)[3] <- "std"
 tbl_total_acc_x_train <- tbl_df(cbind(tbl_SubAct_train, tbl_total_acc_x_train))
+## filter and add averages
+tbl_total_acc_x_train <- mutate(filter(tbl_total_acc_x_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_y_train.txt
 df_total_acc_y_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/total_acc_y_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -115,6 +129,8 @@ tbl_total_acc_y_train <- select(tbl_df(df_total_acc_y_train), type, V1:V2)
 names(tbl_total_acc_y_train)[2] <- "mean"
 names(tbl_total_acc_y_train)[3] <- "std"
 tbl_total_acc_y_train <- tbl_df(cbind(tbl_SubAct_train, tbl_total_acc_y_train))
+## filter and add averages
+tbl_total_acc_y_train <- mutate(filter(tbl_total_acc_y_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_z_train.txt
 df_total_acc_z_train <- read.csv("course3_wk4_data/UCI_HAR_Dataset/train/Inertial\ Signals/total_acc_z_train.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -123,7 +139,8 @@ tbl_total_acc_z_train <- select(tbl_df(df_total_acc_z_train), type, V1:V2)
 names(tbl_total_acc_z_train)[2] <- "mean"
 names(tbl_total_acc_z_train)[3] <- "std"
 tbl_total_acc_z_train <- tbl_df(cbind(tbl_SubAct_train, tbl_total_acc_z_train))
-
+## filter and add averages
+tbl_total_acc_z_train <- mutate(filter(tbl_total_acc_z_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ###
 ### Test data sets
@@ -169,6 +186,8 @@ tbl_body_acc_x_test <- select(tbl_df(df_body_acc_x_test), type, V1:V2)
 names(tbl_body_acc_x_test)[2] <- "mean"
 names(tbl_body_acc_x_test)[3] <- "std"
 tbl_body_acc_x_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_acc_x_test))
+## filter and add averages
+tbl_body_acc_x_test <- mutate(filter(tbl_body_acc_x_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_acc_x_test.txt
 df_body_acc_y_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/body_acc_y_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -177,6 +196,8 @@ tbl_body_acc_y_test <- select(tbl_df(df_body_acc_y_test), type, V1:V2)
 names(tbl_body_acc_y_test)[2] <- "mean"
 names(tbl_body_acc_y_test)[3] <- "std"
 tbl_body_acc_y_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_acc_y_test))
+## filter and add averages
+tbl_body_acc_y_test <- mutate(filter(tbl_body_acc_y_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_acc_z_test.txt
 df_body_acc_z_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/body_acc_z_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -185,6 +206,8 @@ tbl_body_acc_z_test <- select(tbl_df(df_body_acc_z_test), type, V1:V2)
 names(tbl_body_acc_z_test)[2] <- "mean"
 names(tbl_body_acc_z_test)[3] <- "std"
 tbl_body_acc_z_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_acc_z_test))
+## filter and add averages
+tbl_body_acc_z_test <- mutate(filter(tbl_body_acc_z_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_x_test.txt
 df_body_gyro_x_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/body_gyro_x_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -193,6 +216,8 @@ tbl_body_gyro_x_test <- select(tbl_df(df_body_gyro_x_test), type, V1:V2)
 names(tbl_body_gyro_x_test)[2] <- "mean"
 names(tbl_body_gyro_x_test)[3] <- "std"
 tbl_body_gyro_x_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_gyro_x_test))
+## filter and add averages
+tbl_body_gyro_x_test <- mutate(filter(tbl_body_gyro_x_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_y_test.txt
 df_body_gyro_y_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/body_gyro_y_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -201,6 +226,8 @@ tbl_body_gyro_y_test <- select(tbl_df(df_body_gyro_y_test), type, V1:V2)
 names(tbl_body_gyro_y_test)[2] <- "mean"
 names(tbl_body_gyro_y_test)[3] <- "std"
 tbl_body_gyro_y_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_gyro_y_test))
+## filter and add averages
+tbl_body_gyro_y_test <- mutate(filter(tbl_body_gyro_y_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### body_gyro_z_test.txt
 df_body_gyro_z_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/body_gyro_z_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -209,6 +236,8 @@ tbl_body_gyro_z_test <- select(tbl_df(df_body_gyro_z_test), type, V1:V2)
 names(tbl_body_gyro_z_test)[2] <- "mean"
 names(tbl_body_gyro_z_test)[3] <- "std"
 tbl_body_gyro_z_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_body_gyro_z_test))
+## filter and add averages
+tbl_body_gyro_z_test <- mutate(filter(tbl_body_gyro_z_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_x_test.txt
 df_total_acc_x_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/total_acc_x_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -217,6 +246,8 @@ tbl_total_acc_x_test <- select(tbl_df(df_total_acc_x_test), type, V1:V2)
 names(tbl_total_acc_x_test)[2] <- "mean"
 names(tbl_total_acc_x_test)[3] <- "std"
 tbl_total_acc_x_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_total_acc_x_test))
+## filter and add averages
+tbl_total_acc_x_test <- mutate(filter(tbl_total_acc_x_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_y_test.txt
 df_total_acc_y_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/total_acc_y_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -225,6 +256,8 @@ tbl_total_acc_y_test <- select(tbl_df(df_total_acc_y_test), type, V1:V2)
 names(tbl_total_acc_y_test)[2] <- "mean"
 names(tbl_total_acc_y_test)[3] <- "std"
 tbl_total_acc_y_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_total_acc_y_test))
+## filter and add averages
+tbl_total_acc_y_test <- mutate(filter(tbl_total_acc_y_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 ### total_acc_z_test.txt
 df_total_acc_z_test <- read.csv("course3_wk4_data/UCI_HAR_Dataset/test/Inertial\ Signals/total_acc_z_test.txt", header=FALSE, sep = "", strip.white = TRUE, fill = TRUE)
@@ -233,7 +266,8 @@ tbl_total_acc_z_test <- select(tbl_df(df_total_acc_z_test), type, V1:V2)
 names(tbl_total_acc_z_test)[2] <- "mean"
 names(tbl_total_acc_z_test)[3] <- "std"
 tbl_total_acc_z_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_total_acc_z_test))
-
+## filter and add averages
+tbl_total_acc_z_test <- mutate(filter(tbl_total_acc_z_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
 
 ###
@@ -244,11 +278,20 @@ tbl_total_acc_z_test <- tbl_df(cbind(tbl2_SubAct_test, tbl_total_acc_z_test))
 ResTable_train <- select(tbl,  subject_id:V2)
 names(ResTable_train)[5] <- "mean"
 names(ResTable_train)[6] <- "std"
+## filter and add averages
+ResTable_train <- mutate(filter(ResTable_train, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
+
 
 ResTable_test  <- select(tbl2, subject_id:V2)
 names(ResTable_test)[5] <- "mean"
 names(ResTable_test)[6] <- "std"
+## filter and add averages
+ResTable_test <- mutate(filter(ResTable_test, !is.na(mean), !is.na(std)), avg_mean = mean(mean), avg_std = mean(std))
 
+
+###
+### Build the Data Set
+###
 ResTable <- bind_rows(ResTable_train, ResTable_test)
 
 ResTable <- bind_rows(ResTable, tbl_body_acc_x_test)
@@ -270,3 +313,4 @@ ResTable <- bind_rows(ResTable, tbl_body_gyro_z_train)
 ResTable <- bind_rows(ResTable, tbl_total_acc_x_train)
 ResTable <- bind_rows(ResTable, tbl_total_acc_y_train)
 ResTable <- bind_rows(ResTable, tbl_total_acc_z_train)
+
